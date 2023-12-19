@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCO-118500</title>
+</head>
+<body>
+    <h1>Muhammad Abdul Mustafa Qadri</h1>
+<h1>Q 1</h1>
+<script>
+    function displayCustomDateTime() {
+        // Get the current date and time
+        var currentDate = new Date();
+        
+        // Define options for formatting
+        var options = { 
+            weekday: 'long',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            timeZoneName: 'short'
+        };
+
+        // Format the date and time
+        var formattedDateTime = currentDate.toLocaleString('en-US', options);
+
+        // Display the formatted date and time in the browser
+        document.getElementById("datetime").innerHTML = "Current Date and Time: " + formattedDateTime;
+    }
+
+    // Call the function when the page loads
+    window.onload = function() {
+        displayCustomDateTime();
+    };
+</script>
+
+<p id="datetime"></p>
+<h1>Q 2</h1>
+<script>
+    function greetUser(firstName, lastName) {
+        var fullName = firstName + ' ' + lastName;
+        alert('Hello, ' + fullName + '! Welcome!');
+    }
+
+    // Example: Call the function with first and last names
+    var userFirstName = prompt('Enter your first name:');
+    var userLastName = prompt('Enter your last name:');
+
+    greetUser(userFirstName, userLastName);
+</script>
+<h1>Q 3</h1>
+<script>
+    function addNumbers() {
+        // Prompt the user to enter the first number
+        var num1 = parseFloat(prompt('Enter the first number:'));
+
+        // Prompt the user to enter the second number
+        var num2 = parseFloat(prompt('Enter the second number:'));
+
+        // Check if the inputs are valid numbers
+        if (isNaN(num1) || isNaN(num2)) {
+            alert('Please enter valid numbers.');
+            return NaN; // Return NaN if inputs are not valid numbers
+        }
+
+        // Calculate the sum of the two numbers
+        var sum = num1 + num2;
+
+        // Return the sum
+        return sum;
+    }
+
+    // Example: Call the function and display the result
+    var result = addNumbers();
+    alert('The sum of the two numbers is: ' + result);
+</script>
+<h1>Q 4 </h1>
+<script>
+    function calculateResult(num1, num2, operator) {
+        switch (operator) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            case '/':
+                if (num2 !== 0) {
+                    return num1 / num2;
+                } else {
+                    return 'Cannot divide by zero';
+                }
+            default:
+                return 'Invalid operator';
+        }
+    }
+
+    // Example: Call the function with numbers and operator
+    var number1 = parseFloat(prompt('Enter the first number:'));
+    var number2 = parseFloat(prompt('Enter the second number:'));
+    var operator = prompt('Enter the operator (+, -, *, /):');
+
+    var result = calculateResult(number1, number2, operator);
+    alert('Result: ' + result);
+</script>
+<h1>Q 5</h1>
+<script>
+    function squareNumber(number) {
+    return number * number;
+}
+
+// Example: Call the function with a number
+var userInput = parseFloat(prompt('Enter a number:'));
+var result = squareNumber(userInput);
+alert('The square of ' + userInput + ' is: ' + result);
+
+</script>
+<h1>Q 6</h1>
+<script>
+    function factorial(number) {
+    if (number < 0) {
+        return 'Factorial is not defined for negative numbers.';
+    } else if (number === 0 || number === 1) {
+        return 1;
+    } else {
+        var result = 1;
+        for (var i = 2; i <= number; i++) {
+            result *= i;
+        }
+        return result;
+    }
+}
+
+// Example: Call the function with a number
+var userInput = parseInt(prompt('Enter a number:'));
+var result = factorial(userInput);
+alert('The factorial of ' + userInput + ' is: ' + result);
+
+</script>
+<h1>Q7</h1>
+
+    <script>
+    function displayCounting(start, end) {
+        var countingResult = '';
+        
+        if (start <= end) {
+            for (var i = start; i <= end; i++) {
+                countingResult += i + ' ';
+            }
+        } else {
+            for (var j = start; j >= end; j--) {
+                countingResult += j + ' ';
+            }
+        }
+
+        document.getElementById("counting").innerHTML = countingResult;
+    }
+
+    // Example: Call the function with start and end numbers
+    var startNumber = parseInt(prompt('Enter the start number:'));
+    var endNumber = parseInt(prompt('Enter the end number:'));
+
+    displayCounting(startNumber, endNumber);
+</script>
+
+<p id="counting"></p>
+<h1>Q 8</h1>
+<script>
+    function calculateHypotenuse(base, perpendicular) {
+    function calculateSquare(value) {
+        return value * value;
+    }
+
+    var baseSquare = calculateSquare(base);
+    var perpendicularSquare = calculateSquare(perpendicular);
+
+    var hypotenuseSquared = baseSquare + perpendicularSquare;
+    var hypotenuse = Math.sqrt(hypotenuseSquared);
+
+    return hypotenuse;
+}
+
+// Example: Call the function with base and perpendicular
+var baseInput = parseFloat(prompt('Enter the base of the right-angled triangle:'));
+var perpendicularInput = parseFloat(prompt('Enter the perpendicular of the right-angled triangle:'));
+
+var result = calculateHypotenuse(baseInput, perpendicularInput);
+alert('The hypotenuse of the right-angled triangle is: ' + result);
+
+</script>
+<h1>Q 9</h1>
+Argument as values
+<script>
+    function calculateRectangleAreaByValues(width, height) {
+    return width * height;
+}
+
+// Example: Call the function with arguments as values
+var areaByValues = calculateRectangleAreaByValues(5, 8);
+console.log('Area calculated with arguments as values:', areaByValues);
+
+</script>
+<br>
+Argument as variable
+<script>
+    function calculateRectangleAreaByVariables() {
+    var width = parseFloat(prompt('Enter the width of the rectangle:'));
+    var height = parseFloat(prompt('Enter the height of the rectangle:'));
+    
+    if (isNaN(width) || isNaN(height)) {
+        return 'Invalid input. Please enter valid numbers.';
+    }
+
+    return width * height;
+}
+
+// Example: Call the function with arguments as variables
+var areaByVariables = calculateRectangleAreaByVariables();
+alert('Area calculated with arguments as variables: ' + areaByVariables);
+
+</script>
+<h1>Q 10</h1>
+<script>
+    function isPalindrome(str) {
+    // Remove non-alphanumeric characters and convert to lowercase
+    var cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+    // Compare the original and reversed strings
+    var reversedStr = cleanedStr.split('').reverse().join('');
+
+    return cleanedStr === reversedStr;
+}
+
+// Example: Call the function with a string
+var userInput = prompt('Enter a string to check if it is a palindrome:');
+var result = isPalindrome(userInput);
+
+if (result) {
+    alert('The entered string is a palindrome!');
+} else {
+    alert('The entered string is not a palindrome.');
+}
+
+</script>
+<h1>Q 11</h1>
+<script>
+    function capitalizeFirstLetterEachWord(inputString) {
+    // Split the string into an array of words
+    var words = inputString.split(' ');
+
+    // Capitalize the first letter of each word
+    var capitalizedWords = words.map(function(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+
+    // Join the words back into a string
+    var resultString = capitalizedWords.join(' ');
+
+    return resultString;
+}
+
+// Example: Call the function with a string
+var inputString = prompt('Enter a string:');
+var outputString = capitalizeFirstLetterEachWord(inputString);
+alert('Original string: ' + inputString + '\nConverted string: ' + outputString);
+
+</script>
+<h1>
+    Q 12
+</h1>
+<script>
+    function findLongestWord(inputString) {
+    // Split the string into an array of words
+    var words = inputString.split(' ');
+
+    // Initialize variables to keep track of the longest word and its length
+    var longestWord = '';
+    var maxLength = 0;
+
+    // Iterate through each word to find the longest one
+    for (var i = 0; i < words.length; i++) {
+        var currentWord = words[i];
+
+        // Remove non-alphabetic characters to get the actual word length
+        var currentWordLength = currentWord.replace(/[^a-zA-Z]/g, '').length;
+
+        if (currentWordLength > maxLength) {
+            maxLength = currentWordLength;
+            longestWord = currentWord;
+        }
+    }
+
+    return longestWord;
+}
+
+// Example: Call the function with a string
+var inputString = prompt('Enter a string:');
+var longestWord = findLongestWord(inputString);
+
+if (longestWord !== '') {
+    alert('Longest word in the string: ' + longestWord);
+} else {
+    alert('No valid words found in the string.');
+}
+
+</script>
+<h1>Q 13</h1>
+<script>
+    function countOccurrences(inputString, targetLetter) {
+    // Convert both the input string and target letter to lowercase for case-insensitive matching
+    var lowercasedString = inputString.toLowerCase();
+    var lowercasedLetter = targetLetter.toLowerCase();
+
+    // Initialize a counter for the occurrences
+    var occurrences = 0;
+
+    // Iterate through each character in the string
+    for (var i = 0; i < lowercasedString.length; i++) {
+        // Check if the current character matches the target letter
+        if (lowercasedString[i] === lowercasedLetter) {
+            occurrences++;
+        }
+    }
+
+    return occurrences;
+}
+
+// Example: Call the function with a string and a letter
+var inputString = prompt('Enter a string:');
+var targetLetter = prompt('Enter a letter to count:');
+var result = countOccurrences(inputString, targetLetter);
+
+alert('Number of occurrences of \'' + targetLetter + '\' in the string: ' + result);
+
+</script>
+<h1> Q 14</h1>
+<script>
+    function calcCircumference(radius) {
+    // Calculate the circumference using the formula 2 * π * radius
+    var circumference = 2 * Math.PI * radius;
+    return 'The circumference is ' + circumference.toFixed(2);
+}
+
+function calcArea(radius) {
+    // Calculate the area using the formula π * radius^2
+    var area = Math.PI * Math.pow(radius, 2);
+    return 'The area is ' + area.toFixed(2);
+}
+
+// Example: Call the functions with a radius
+var radiusInput = parseFloat(prompt('Enter the radius of the circle:'));
+if (isNaN(radiusInput) || radiusInput < 0) {
+    alert('Invalid input. Please enter a valid positive number for the radius.');
+} else {
+    alert(calcCircumference(radiusInput) + '\n' + calcArea(radiusInput));
+}
+
+</script>
+
+</body>
+</html>
